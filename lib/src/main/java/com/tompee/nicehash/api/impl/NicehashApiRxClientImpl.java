@@ -14,7 +14,7 @@ import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 
 import static com.tompee.nicehash.api.NicehashApiHelper.convertAlgoToCode;
 import static com.tompee.nicehash.api.NicehashApiHelper.convertLocationToCode;
@@ -28,57 +28,57 @@ public class NicehashApiRxClientImpl implements NicehashApiRxClient {
     }
 
     @Override
-    public Observable<MethodResult<Version>> getVersion() {
+    public Single<MethodResult<Version>> getVersion() {
         return apiService.getVersion();
     }
 
     @Override
-    public Observable<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability() {
+    public Single<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability() {
         return apiService.getCurrentGlobalProfitability();
     }
 
     @Override
-    public Observable<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability(NicehashApiLocation location) {
+    public Single<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability(NicehashApiLocation location) {
         return apiService.getCurrentGlobalProfitability(convertLocationToCode(location));
     }
 
     @Override
-    public Observable<MethodResult<GlobalAverage>> getAverageGlobalProfitability() {
+    public Single<MethodResult<GlobalAverage>> getAverageGlobalProfitability() {
         return apiService.getGlobalAverageProfitability();
     }
 
     @Override
-    public Observable<MethodResult<ProviderStat>> getProviderStatistics(String address) {
+    public Single<MethodResult<ProviderStat>> getProviderStatistics(String address) {
         return apiService.getProviderStatistics(address);
     }
 
     @Override
-    public Observable<MethodResult<Payment>> getPayments(String address) {
+    public Single<MethodResult<Payment>> getPayments(String address) {
         return apiService.getPayments(address);
     }
 
     @Override
-    public Observable<MethodResult<Payment>> getPayments(String address, long timestamp) {
+    public Single<MethodResult<Payment>> getPayments(String address, long timestamp) {
         return apiService.getPayments(address, timestamp);
     }
 
     @Override
-    public Observable<MethodResult<OrderDetails>> getOrderDetails(NicehashApiLocation location, NicehashApiAlgorithm algorithm) {
+    public Single<MethodResult<OrderDetails>> getOrderDetails(NicehashApiLocation location, NicehashApiAlgorithm algorithm) {
         return apiService.getOrders(convertLocationToCode(location), convertAlgoToCode(algorithm));
     }
 
     @Override
-    public Observable<MethodResult<MultiAlgoInfo>> getMultiAlgoInfo() {
+    public Single<MethodResult<MultiAlgoInfo>> getMultiAlgoInfo() {
         return apiService.getMultiAlgoInfo();
     }
 
     @Override
-    public Observable<MethodResult<SimpleMultiAlgoInfo>> getSimpleMultiAlgoInfo() {
+    public Single<MethodResult<SimpleMultiAlgoInfo>> getSimpleMultiAlgoInfo() {
         return apiService.getSimpleMultiAlgoInfo();
     }
 
     @Override
-    public Observable<MethodResult<BuyInfo>> getBuyInfo() {
+    public Single<MethodResult<BuyInfo>> getBuyInfo() {
         return apiService.getBuyInfo();
     }
 }

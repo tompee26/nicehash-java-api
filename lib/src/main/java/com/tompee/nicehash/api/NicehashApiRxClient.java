@@ -13,7 +13,7 @@ import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 
 
 /**
@@ -25,14 +25,14 @@ public interface NicehashApiRxClient {
      *
      * @return API version
      */
-    Observable<MethodResult<Version>> getVersion();
+    Single<MethodResult<Version>> getVersion();
 
     /**
      * Check current global profitability
      *
      * @return Global current profitability
      */
-    Observable<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability();
+    Single<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability();
 
     /**
      * Check current global profitability
@@ -40,14 +40,14 @@ public interface NicehashApiRxClient {
      * @param location location
      * @return Global current profitability
      */
-    Observable<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability(NicehashApiLocation location);
+    Single<MethodResult<GlobalCurrent>> getCurrentGlobalProfitability(NicehashApiLocation location);
 
     /**
      * Check average global profitability
      *
      * @return Global average profitability
      */
-    Observable<MethodResult<GlobalAverage>> getAverageGlobalProfitability();
+    Single<MethodResult<GlobalAverage>> getAverageGlobalProfitability();
 
     /**
      * Check provider statistics
@@ -55,7 +55,7 @@ public interface NicehashApiRxClient {
      * @param address Provider address
      * @return Provider statistics
      */
-    Observable<MethodResult<ProviderStat>> getProviderStatistics(String address);
+    Single<MethodResult<ProviderStat>> getProviderStatistics(String address);
 
     /**
      * Check detailed provider statistics
@@ -63,7 +63,7 @@ public interface NicehashApiRxClient {
      * @param address Provider address
      * @return Detailed provider statistics
      */
-    //Observable<MethodResult<DetailedProviderStat>> getDetailedProviderStatistics(String address);
+    //Single<MethodResult<DetailedProviderStat>> getDetailedProviderStatistics(String address);
 
     /**
      * Check detailed provider statistics
@@ -72,7 +72,7 @@ public interface NicehashApiRxClient {
      * @param timestamp Unix timestamp
      * @return Detailed provider statistics
      */
-    //Observable<MethodResult<DetailedProviderStat>> getDetailedProviderStatistics(String address, long timestamp);
+    //Single<MethodResult<DetailedProviderStat>> getDetailedProviderStatistics(String address, long timestamp);
 
     /**
      * Check payments
@@ -80,7 +80,7 @@ public interface NicehashApiRxClient {
      * @param address Provider address
      * @return Payments
      */
-    Observable<MethodResult<Payment>> getPayments(String address);
+    Single<MethodResult<Payment>> getPayments(String address);
 
     /**
      * Check payments
@@ -89,7 +89,7 @@ public interface NicehashApiRxClient {
      * @param timestamp Unix timestamp
      * @return Payments
      */
-    Observable<MethodResult<Payment>> getPayments(String address, long timestamp);
+    Single<MethodResult<Payment>> getPayments(String address, long timestamp);
 
     /**
      * Check worker details
@@ -97,7 +97,7 @@ public interface NicehashApiRxClient {
      * @param address Provider details
      * @return Worker details
      */
-    //Observable<MethodResult<WorkerDetails>> getWorkerDetails(String address);
+    //Single<MethodResult<WorkerDetails>> getWorkerDetails(String address);
 
     /**
      * Check worker details
@@ -106,7 +106,7 @@ public interface NicehashApiRxClient {
      * @param algorithm Algorithm
      * @return Worker details
      */
-    //Observable<MethodResult<WorkerDetails>> getWorkerDetails(String address, NicehashApiAlgorithm algorithm);
+    //Single<MethodResult<WorkerDetails>> getWorkerDetails(String address, NicehashApiAlgorithm algorithm);
 
     /**
      * Check order details
@@ -115,20 +115,20 @@ public interface NicehashApiRxClient {
      * @param algorithm Algorithm
      * @return Worker details
      */
-    Observable<MethodResult<OrderDetails>> getOrderDetails(NicehashApiLocation location, NicehashApiAlgorithm algorithm);
+    Single<MethodResult<OrderDetails>> getOrderDetails(NicehashApiLocation location, NicehashApiAlgorithm algorithm);
 
     /**
      * Check multi algo info
      */
-    Observable<MethodResult<MultiAlgoInfo>> getMultiAlgoInfo();
+    Single<MethodResult<MultiAlgoInfo>> getMultiAlgoInfo();
 
     /**
      * Check simple multi algo info
      */
-    Observable<MethodResult<SimpleMultiAlgoInfo>> getSimpleMultiAlgoInfo();
+    Single<MethodResult<SimpleMultiAlgoInfo>> getSimpleMultiAlgoInfo();
 
     /**
      * Check buy info
      */
-    Observable<MethodResult<BuyInfo>> getBuyInfo();
+    Single<MethodResult<BuyInfo>> getBuyInfo();
 }
