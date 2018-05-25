@@ -2,6 +2,7 @@ package com.tompee.nicehash.api.model.detailedproviderstat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tompee.nicehash.api.model.ResultBase;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Detailed provider statistics model
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DetailedProviderStat {
+public class DetailedProviderStat extends ResultBase {
     @JsonProperty("current")
     private List<Current> current = null;
     @JsonProperty("nh_wallet")

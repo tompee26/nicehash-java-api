@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val clientFactory = NicehashApiClientFactory.createInstance()
         val restClient = clientFactory.createRestClient()
 
-        val globalCurrent = restClient.getProviderStatistics("7MoymjzihcS5x45AfqDJzHUBcqu8gSxCb")
+        val globalCurrent = restClient.getProviderStatistics("37MoymjzihcS5x45AfqDJzHUBcqu8gSxCb")
         Log.d("Nicehash test", globalCurrent.result.addr)
     }
 }

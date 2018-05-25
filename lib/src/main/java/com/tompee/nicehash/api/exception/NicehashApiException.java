@@ -1,6 +1,6 @@
 package com.tompee.nicehash.api.exception;
 
-import com.tompee.nicehash.api.NicehashApiError;
+import com.tompee.nicehash.api.model.NicehashApiError;
 
 /**
  * A custom exception that can be thrown when using Nicehash APIs

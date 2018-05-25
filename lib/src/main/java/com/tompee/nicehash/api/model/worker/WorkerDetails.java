@@ -1,6 +1,7 @@
 package com.tompee.nicehash.api.model.worker;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.tompee.nicehash.api.model.ResultBase;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * Worker details model
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WorkerDetails {
+public class WorkerDetails extends ResultBase {
     private String addr;
     private List<List<String>> workers = null;
     private Integer algo;

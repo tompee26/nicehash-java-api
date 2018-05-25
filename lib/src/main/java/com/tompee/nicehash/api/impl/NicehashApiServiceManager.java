@@ -1,8 +1,8 @@
 package com.tompee.nicehash.api.impl;
 
-import com.tompee.nicehash.api.NicehashApiError;
 import com.tompee.nicehash.api.constants.NicehashApiConstants;
 import com.tompee.nicehash.api.exception.NicehashApiException;
+import com.tompee.nicehash.api.model.NicehashApiError;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;

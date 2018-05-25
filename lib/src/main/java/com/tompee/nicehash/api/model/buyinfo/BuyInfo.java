@@ -2,11 +2,12 @@ package com.tompee.nicehash.api.model.buyinfo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tompee.nicehash.api.model.ResultBase;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BuyInfo {
+public class BuyInfo extends ResultBase {
     private List<Algorithm> algorithms = null;
     @JsonProperty("down_time")
     private Integer downTime;

@@ -2,6 +2,7 @@ package com.tompee.nicehash.api.model.payments;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tompee.nicehash.api.model.ResultBase;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Payment model
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Payment {
+public class Payment extends ResultBase {
 
     @JsonProperty("nh_wallet")
     private Boolean nhWallet;

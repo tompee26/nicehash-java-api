@@ -7,7 +7,7 @@ import com.tompee.nicehash.api.model.simplemultialgo.SimpleMultiAlgo;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SimpleMultiAlgoInfo {
+public class SimpleMultiAlgoInfo extends ResultBase {
     @JsonProperty("simplemultialgo")
     private List<SimpleMultiAlgo> simpleMultiAlgo = null;
 

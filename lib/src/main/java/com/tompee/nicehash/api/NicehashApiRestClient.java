@@ -6,7 +6,6 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
-import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;

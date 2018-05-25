@@ -1,11 +1,12 @@
 package com.tompee.nicehash.api.model.order;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.tompee.nicehash.api.model.ResultBase;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrderDetails {
+public class OrderDetails extends ResultBase {
     private List<Order> orders = null;
     private Integer timestamp;
 
