@@ -7,7 +7,6 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
-import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;
@@ -42,13 +41,8 @@ public class NicehashApiRestClientImpl implements NicehashApiRestClient {
     }
 
     @Override
-    public MethodResult<GlobalCurrent> getCurrentGlobalProfitabilityEu() {
-        return executeSync(apiService.getCurrentGlobalProfitability(0));
-    }
-
-    @Override
-    public MethodResult<GlobalCurrent> getCurrentGlobalProfitabilityUs() {
-        return executeSync(apiService.getCurrentGlobalProfitability(1));
+    public MethodResult<GlobalCurrent> getCurrentGlobalProfitability(NicehashApiLocation location) {
+        return executeSync(apiService.getCurrentGlobalProfitability(convertLocationToCode(location)));
     }
 
     @Override

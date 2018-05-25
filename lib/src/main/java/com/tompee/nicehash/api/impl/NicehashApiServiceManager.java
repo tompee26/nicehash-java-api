@@ -47,7 +47,11 @@ class NicehashApiServiceManager {
         }
     }
 
-    private static NicehashApiError getNicehashApiError(Response<?> response) throws IOException, NicehashApiException {
+    static <T> void runAsync(Call<T> call, retrofit2.Callback<T> callback) {
+        call.enqueue(callback);
+    }
+
+    static NicehashApiError getNicehashApiError(Response<?> response) throws IOException, NicehashApiException {
         return (NicehashApiError) retrofit.responseBodyConverter(NicehashApiError.class, new Annotation[0])
                 .convert(response.errorBody());
     }

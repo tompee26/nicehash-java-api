@@ -14,7 +14,7 @@ import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
 
 /**
- * Nicehash API facade. Operations are synchronous.
+ * Nicehash API Rest client facade. Operations are synchronous
  */
 public interface NicehashApiRestClient {
 
@@ -33,18 +33,12 @@ public interface NicehashApiRestClient {
     MethodResult<GlobalCurrent> getCurrentGlobalProfitability();
 
     /**
-     * Check current global profitability in Europe
+     * Check current global profitability
      *
-     * @return Global current profitability in Europe
+     * @param location location
+     * @return Global current profitability
      */
-    MethodResult<GlobalCurrent> getCurrentGlobalProfitabilityEu();
-
-    /**
-     * Check current global profitability in USA
-     *
-     * @return Global current profitability in USA
-     */
-    MethodResult<GlobalCurrent> getCurrentGlobalProfitabilityUs();
+    MethodResult<GlobalCurrent> getCurrentGlobalProfitability(NicehashApiLocation location);
 
     /**
      * Check average global profitability
