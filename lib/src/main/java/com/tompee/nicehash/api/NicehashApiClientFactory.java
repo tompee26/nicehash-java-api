@@ -2,6 +2,7 @@ package com.tompee.nicehash.api;
 
 import com.tompee.nicehash.api.impl.NicehashApiAsyncRestClientImpl;
 import com.tompee.nicehash.api.impl.NicehashApiRestClientImpl;
+import com.tompee.nicehash.api.impl.NicehashApiRxClientImpl;
 
 public class NicehashApiClientFactory {
 
@@ -37,4 +38,14 @@ public class NicehashApiClientFactory {
     public NicehashApiAsyncRestClient createAsyncRestClient() {
         return new NicehashApiAsyncRestClientImpl();
     }
+
+    /**
+     * Creates a new instance of the Rx client
+     *
+     * @return The nicehash rx rest client
+     */
+    public NicehashApiRxClient createRxClient() {
+        return new NicehashApiRxClientImpl();
+    }
+
 }

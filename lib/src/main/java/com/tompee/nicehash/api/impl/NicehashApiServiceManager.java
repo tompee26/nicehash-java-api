@@ -7,10 +7,11 @@ import com.tompee.nicehash.api.model.NicehashApiError;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
@@ -18,16 +19,19 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 class NicehashApiServiceManager {
 
-    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-
     private static Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl(NicehashApiConstants.BASE_URL)
-            .addConverterFactory(JacksonConverterFactory.create());
+            .addConverterFactory(JacksonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
 
     private static Retrofit retrofit = builder.build();
 
     static NicehashApiService createService() {
         return retrofit.create(NicehashApiService.class);
+    }
+
+    static NicehashApiRxService createRxService() {
+        return retrofit.create(NicehashApiRxService.class);
     }
 
     /**
@@ -47,7 +51,7 @@ class NicehashApiServiceManager {
         }
     }
 
-    static <T> void runAsync(Call<T> call, retrofit2.Callback<T> callback) {
+    static <T> void runAsync(Call<T> call, Callback<T> callback) {
         call.enqueue(callback);
     }
 
