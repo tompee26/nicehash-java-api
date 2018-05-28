@@ -9,7 +9,17 @@ A Nicehash API wrapper for Java (and Kotlin).
 - Lightweight
 
 ## Installation
-Still on beta. Watch out for the artifact soon.
+Note: Still on Beta. Please report any issues you encounter.
+
+In your build.gradle
+
+```
+dependencies {
+   com.tompee:nicehashapi:0.1.0'
+}
+```
+
+Currently, it is only available as an aar. Other formats are being considered.
 
 ## Getting Started
 There are 3 client classes that you can use to interface with the API.
