@@ -6,12 +6,14 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
+import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;
 import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
+import com.tompee.nicehash.api.model.worker.WorkerDetails;
 
 /**
  * Nicehash API Rest client facade. Operations are synchronous
@@ -61,7 +63,7 @@ public interface NicehashApiRestClient {
      * @param address Provider address
      * @return Detailed provider statistics
      */
-    //MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address);
+    MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address);
 
     /**
      * Check detailed provider statistics
@@ -70,7 +72,7 @@ public interface NicehashApiRestClient {
      * @param timestamp Unix timestamp
      * @return Detailed provider statistics
      */
-    //MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address, long timestamp);
+    MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address, long timestamp);
 
     /**
      * Check payments
@@ -95,7 +97,7 @@ public interface NicehashApiRestClient {
      * @param address Provider details
      * @return Worker details
      */
-    //MethodResult<WorkerDetails> getWorkerDetails(String address);
+    MethodResult<WorkerDetails> getWorkerDetails(String address);
 
     /**
      * Check worker details
@@ -104,7 +106,7 @@ public interface NicehashApiRestClient {
      * @param algorithm Algorithm
      * @return Worker details
      */
-    //MethodResult<WorkerDetails> getWorkerDetails(String address, NicehashApiAlgorithm algorithm);
+    MethodResult<WorkerDetails> getWorkerDetails(String address, NicehashApiAlgorithm algorithm);
 
     /**
      * Check order details

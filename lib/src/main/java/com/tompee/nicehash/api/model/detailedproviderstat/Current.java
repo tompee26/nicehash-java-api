@@ -13,7 +13,7 @@ public class Current {
     @JsonProperty("profitability")
     private String profitability;
     @JsonProperty("data")
-    private List<Datum> data = null;
+    private List<Object> data = null;
     @JsonProperty("name")
     private String name;
     @JsonProperty("suffix")
@@ -29,11 +29,11 @@ public class Current {
         this.profitability = profitability;
     }
 
-    public List<Datum> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
 

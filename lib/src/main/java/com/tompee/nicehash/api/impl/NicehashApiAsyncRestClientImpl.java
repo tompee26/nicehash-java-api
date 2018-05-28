@@ -8,12 +8,14 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
+import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;
 import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
+import com.tompee.nicehash.api.model.worker.WorkerDetails;
 
 import static com.tompee.nicehash.api.NicehashApiHelper.convertAlgoToCode;
 import static com.tompee.nicehash.api.NicehashApiHelper.convertLocationToCode;
@@ -53,6 +55,16 @@ public class NicehashApiAsyncRestClientImpl implements NicehashApiAsyncRestClien
     }
 
     @Override
+    public void getDetailedProviderStatistics(String address, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback) {
+        runAsync(apiService.getDetailedProviderStatistics(address), new NicehashApiCallbackAdapter<>(callback));
+    }
+
+    @Override
+    public void getDetailedProviderStatistics(String address, long timestamp, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback) {
+        runAsync(apiService.getDetailedProviderStatistics(address, timestamp), new NicehashApiCallbackAdapter<>(callback));
+    }
+
+    @Override
     public void getPayments(String address, NicehashApiCallback<MethodResult<Payment>> callback) {
         runAsync(apiService.getPayments(address), new NicehashApiCallbackAdapter<>(callback));
     }
@@ -60,6 +72,16 @@ public class NicehashApiAsyncRestClientImpl implements NicehashApiAsyncRestClien
     @Override
     public void getPayments(String address, long timestamp, NicehashApiCallback<MethodResult<Payment>> callback) {
         runAsync(apiService.getPayments(address, timestamp), new NicehashApiCallbackAdapter<>(callback));
+    }
+
+    @Override
+    public void getWorkerDetails(String address, NicehashApiCallback<MethodResult<WorkerDetails>> callback) {
+        runAsync(apiService.getWorkerDetails(address), new NicehashApiCallbackAdapter<>(callback));
+    }
+
+    @Override
+    public void getWorkerDetails(String address, NicehashApiAlgorithm algorithm, NicehashApiCallback<MethodResult<WorkerDetails>> callback) {
+        runAsync(apiService.getWorkerDetails(address, convertAlgoToCode(algorithm)), new NicehashApiCallbackAdapter<>(callback));
     }
 
     @Override

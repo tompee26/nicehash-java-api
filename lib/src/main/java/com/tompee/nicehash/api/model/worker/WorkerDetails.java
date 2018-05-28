@@ -11,7 +11,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WorkerDetails extends ResultBase {
     private String addr;
-    private List<List<String>> workers = null;
+    private List<Object> workers = null;
     private Integer algo;
 
     public String getAddr() {
@@ -22,11 +22,11 @@ public class WorkerDetails extends ResultBase {
         this.addr = addr;
     }
 
-    public List<List<String>> getWorkers() {
+    public List<Object> getWorkers() {
         return workers;
     }
 
-    public void setWorkers(List<List<String>> workers) {
+    public void setWorkers(List<Object> workers) {
         this.workers = workers;
     }
 

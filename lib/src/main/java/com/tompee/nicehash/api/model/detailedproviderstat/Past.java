@@ -11,15 +11,15 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Past {
     @JsonProperty("data")
-    private List<List<Integer>> data = null;
+    private List<Object> data = null;
     @JsonProperty("algo")
     private Integer algo;
 
-    public List<List<Integer>> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<List<Integer>> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
 

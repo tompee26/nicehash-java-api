@@ -7,12 +7,14 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
+import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;
 import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
+import com.tompee.nicehash.api.model.worker.WorkerDetails;
 
 import static com.tompee.nicehash.api.NicehashApiHelper.convertAlgoToCode;
 import static com.tompee.nicehash.api.NicehashApiHelper.convertLocationToCode;
@@ -55,15 +57,15 @@ public class NicehashApiRestClientImpl implements NicehashApiRestClient {
         return executeSync(apiService.getProviderStatistics(address));
     }
 
-//    @Override
-//    public MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address) {
-//        return executeSync(apiService.getDetailedProviderStatistics(address));
-//    }
-//
-//    @Override
-//    public MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address, long timestamp) {
-//        return NicehasApiServiceManager.executeSync(apiService.getDetailedProviderStatistics(address, timestamp));
-//    }
+    @Override
+    public MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address) {
+        return executeSync(apiService.getDetailedProviderStatistics(address));
+    }
+
+    @Override
+    public MethodResult<DetailedProviderStat> getDetailedProviderStatistics(String address, long timestamp) {
+        return executeSync(apiService.getDetailedProviderStatistics(address, timestamp));
+    }
 
     @Override
     public MethodResult<Payment> getPayments(String address) {
@@ -75,15 +77,15 @@ public class NicehashApiRestClientImpl implements NicehashApiRestClient {
         return executeSync(apiService.getPayments(address, timestamp));
     }
 
-//    @Override
-//    public MethodResult<WorkerDetails> getWorkerDetails(String address) {
-//        return NicehasApiServiceManager.executeSync(apiService.getWorkerDetails(address));
-//    }
-//
-//    @Override
-//    public MethodResult<WorkerDetails> getWorkerDetails(String address, NicehashApiAlgorithm algorithm) {
-//        return NicehasApiServiceManager.executeSync(apiService.getWorkerDetails(address, NicehashApiHelper.convertAlgoToCode(algorithm)));
-//    }
+    @Override
+    public MethodResult<WorkerDetails> getWorkerDetails(String address) {
+        return executeSync(apiService.getWorkerDetails(address));
+    }
+
+    @Override
+    public MethodResult<WorkerDetails> getWorkerDetails(String address, NicehashApiAlgorithm algorithm) {
+        return executeSync(apiService.getWorkerDetails(address, convertAlgoToCode(algorithm)));
+    }
 
     @Override
     public MethodResult<OrderDetails> getOrderDetails(NicehashApiLocation location, NicehashApiAlgorithm algorithm) {

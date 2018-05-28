@@ -6,12 +6,14 @@ import com.tompee.nicehash.api.model.NicehashApiLocation;
 import com.tompee.nicehash.api.model.SimpleMultiAlgoInfo;
 import com.tompee.nicehash.api.model.average.GlobalAverage;
 import com.tompee.nicehash.api.model.buyinfo.BuyInfo;
+import com.tompee.nicehash.api.model.detailedproviderstat.DetailedProviderStat;
 import com.tompee.nicehash.api.model.global.GlobalCurrent;
 import com.tompee.nicehash.api.model.multialgo.MultiAlgoInfo;
 import com.tompee.nicehash.api.model.order.OrderDetails;
 import com.tompee.nicehash.api.model.payments.Payment;
 import com.tompee.nicehash.api.model.providerstat.ProviderStat;
 import com.tompee.nicehash.api.model.version.Version;
+import com.tompee.nicehash.api.model.worker.WorkerDetails;
 
 /**
  * Nicehash API Async Rest client facade. Operations are asynchronous
@@ -60,7 +62,7 @@ public interface NicehashApiAsyncRestClient {
      * @param address Provider address
      * @param callback callback that handles the response
      */
-    //void getDetailedProviderStatistics(String address, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback);
+    void getDetailedProviderStatistics(String address, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback);
 
     /**
      * Check detailed provider statistics
@@ -69,7 +71,7 @@ public interface NicehashApiAsyncRestClient {
      * @param timestamp Unix timestamp
      * @param callback callback that handles the response
      */
-    //void getDetailedProviderStatistics(String address, long timestamp, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback);
+    void getDetailedProviderStatistics(String address, long timestamp, NicehashApiCallback<MethodResult<DetailedProviderStat>> callback);
 
     /**
      * Check payments
@@ -94,7 +96,7 @@ public interface NicehashApiAsyncRestClient {
      * @param address Provider details
      * @param callback callback that handles the response
      */
-    //void getWorkerDetails(String address, NicehashApiCallback<MethodResult<WorkerDetails>> callback);
+    void getWorkerDetails(String address, NicehashApiCallback<MethodResult<WorkerDetails>> callback);
 
     /**
      * Check worker details
@@ -103,7 +105,7 @@ public interface NicehashApiAsyncRestClient {
      * @param algorithm Algorithm
      * @param callback callback that handles the response
      */
-    //void getWorkerDetails(String address, NicehashApiAlgorithm algorithm, NicehashApiCallback<MethodResult<WorkerDetails>> callback);
+    void getWorkerDetails(String address, NicehashApiAlgorithm algorithm, NicehashApiCallback<MethodResult<WorkerDetails>> callback);
 
     /**
      * Check order details
