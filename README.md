@@ -74,7 +74,7 @@ rxClient.getVersion().subscribe(new Consumer<MethodResult<Version>>() {
 2. getCurrentGlobalProfitability - GlobalCurrent
 3. getAverageGlobalProfitability - GlobalAverage
 4. getProviderStatistics - ProviderStat
-5. getDetailedProviderStatistics - DetailedProviderStat (Currently disabled)
+5. getDetailedProviderStatistics - DetailedProviderStat
 6. getPayments - Payment
 7. getWorkerDetails - WorkerDetails (Currently disabled)
 8. getOrderDetails - OrderDetails
@@ -83,6 +83,7 @@ rxClient.getVersion().subscribe(new Consumer<MethodResult<Version>>() {
 11. getBuyInfo - BuyInfo
 
 Private APIs are not yet supported. Watch out.
+Note: getDetailedProviderStatistics and getWorkerDetails are not parsed well because of weird JSON format. Future version will release a converter to a user friendly object.
 
 ## Thanks
 Nicehash for the API hosting. https://www.nicehash.com/
