@@ -83,6 +83,7 @@ rxClient.getVersion().subscribe(new Consumer<MethodResult<Version>>() {
 11. getBuyInfo - BuyInfo
 
 Private APIs are not yet supported. Watch out.
+
 Note: getDetailedProviderStatistics and getWorkerDetails are not parsed well because of weird JSON format. Future version will release a converter to a user friendly object.
 
 ## Thanks
