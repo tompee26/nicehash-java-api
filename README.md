@@ -15,7 +15,7 @@ In your build.gradle
 
 ```
 dependencies {
-   com.tompee:nicehashapi:0.1.0'
+   implementation 'com.tompee:nicehashapi:0.1.0'
 }
 ```
 
