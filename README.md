@@ -86,7 +86,7 @@ rxClient.getVersion().subscribe(new Consumer<MethodResult<Version>>() {
 4. getProviderStatistics - ProviderStat
 5. getDetailedProviderStatistics - DetailedProviderStat
 6. getPayments - Payment
-7. getWorkerDetails - WorkerDetails (Currently disabled)
+7. getWorkerDetails - WorkerDetails
 8. getOrderDetails - OrderDetails
 9. getMultiAlgoInfo - MultiAlgoInfo
 10. getSimpleMultiAlgoInfo - SimpleMultiAlgoInfo
